@@ -1,0 +1,61 @@
+/**
+ * Import variables
+ */
+
+@tailwind base;
+@tailwind components;
+
+@import "variables";
+
+/**
+ * Import npm dependencies
+ * see: https://en.parceljs.org/module_resolution.html
+ * see commented examples below
+ */
+@import "@fortawesome/fontawesome-free/css/all.css";
+// @import "some-node-module";
+// @import "@some-company/some-node-module";
+
+/**
+ * Import layouts
+ * It's a best practice to use a partial for each page
+ */
+
+@import "layouts/_home";
+@import "_responsive";
+
+@layer components {
+
+    .header {
+        @apply w-w50 desktop:w-w40 h-h100 float-left top-0 fixed bg-white
+    }
+
+    .nav-bar {
+      @apply mobile:w-w50 desktop:w-w60 h-h100 float-right top-0 right-0 fixed bg-white
+    }
+
+    .menu-desktop {
+        @apply mobile:hidden tablet:mx-m-auto tablet:my-m20 tablet:flex tablet:flex-wrap tablet:justify-center
+    }
+
+    .menu-mobile {
+        @apply tablet:hidden w-w80 h-h36 mobile:mr-m50 mobile:mt-m30 relative
+    }
+
+    .link-menu {
+        @apply block text-14pt text-center font-medium text-h1-color py-p8 px-p16 hover:text-a-color
+    }
+
+    .group-card {
+        @apply w-w100 desktop:w-w30 pt-p100 mx-m0
+    }
+
+    .group-card-center {
+        @apply w-w100 desktop:w-w30 pt-p100 mx-m0 desktop:mx-m5
+    }
+  }
+
+@tailwind utilities;
+/**
+ * Do NOT include anything else in this file!
+ */
